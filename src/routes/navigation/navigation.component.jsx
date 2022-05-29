@@ -11,7 +11,7 @@ import './navigation.styles.scss'
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext)
-  const {hidden, toggleHidden} = useContext(CartContext)
+  const { hidden } = useContext(CartContext)
 
   return(
     <Fragment>
@@ -34,7 +34,7 @@ const Navigation = () => {
               </Link>
             )
           }
-          <CartIcon toggleHidden={toggleHidden} />
+          <CartIcon/>
         </div>
         {
           hidden ? null : <CartDropdown />

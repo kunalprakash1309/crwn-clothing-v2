@@ -1,14 +1,13 @@
 import { createContext, useEffect, useState } from "react";
-import SHOP_DATA from '../shop-data.js'
 
 import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils.js";
 
-export const ProductsContext = createContext({
-  products: []
+export const CategoriesContext = createContext({
+  categoriesMap: {}
 })
 
-export const ProductProvider = ({children}) => {
-  const [products, setProducts] = useState([])
+export const CategoriesProvider = ({children}) => {
+  const [categoriesMap, setCategoriesMap] = useState({})
 
   // when we want to run async call in useEffect this is wrong way
   // useEffect(async() => {}, [])
@@ -17,16 +16,18 @@ export const ProductProvider = ({children}) => {
     const getCategoriesMap = async () => {
       const categoryMap = await getCategoriesAndDocuments('categories');
       console.log(categoryMap)
+
+      setCategoriesMap(categoryMap)
     }
 
     getCategoriesMap()
   }, [])
 
-  const value = {products}
+  const value = { categoriesMap }
 
   return(
-    <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>
+    <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
   )
 }
 
-export default ProductProvider
+export default CategoriesProvider

@@ -9,20 +9,20 @@ import App from './App';
 import { UserProvider } from './contexts/user.context';
 
 import reportWebVitals from './reportWebVitals';
-import ProductProvider from './contexts/products.context';
-import { CartContext, CartProvider } from './contexts/cart.context';
+import CategoriesProvider from './contexts/categories.context';
+import { CartProvider } from './contexts/cart.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductProvider>
+      <CategoriesProvider>
         <UserProvider>
           <CartProvider>
             <App/>
           </CartProvider>
         </UserProvider>
-      </ProductProvider>
+      </CategoriesProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

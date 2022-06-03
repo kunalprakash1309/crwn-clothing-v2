@@ -15,9 +15,9 @@ import CartItem from '../cart-item/cart-item.component'
 
 const CartDropdown = () => {
   const navigate = useNavigate()
-  const { cartItems, setHidden } = useContext(CartContext)
+  const { cartItems, toggleHidden } = useContext(CartContext)
 
-  const handleClick = () => { navigate('/checkout'); setHidden(true)}
+  const handleClick = () => { navigate('/checkout'); toggleHidden()}
 
   return (
     <CartDropdownContainer>

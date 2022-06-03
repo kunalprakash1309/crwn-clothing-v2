@@ -8,8 +8,8 @@ const CartIcon = () => {
   const {hidden, toggleHidden, cartCount} = useContext(CartContext)
   // const toggleisCartOpen = () => setHidden(!hidden)
   return (
-    <CartIconContainer>
-      <ShoppingIcon className='shopping-icon' onClick={toggleHidden}/>
+    <CartIconContainer onClick={toggleHidden}>
+      <ShoppingIcon className='shopping-icon' />
       <ItemCount>{cartCount}</ItemCount>
     </CartIconContainer>
   )

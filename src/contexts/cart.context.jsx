@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 
 export const addCartItem = (cartItems, productToAdd) => {
   const existingCartItem = cartItems.find(
@@ -49,11 +49,40 @@ export const CartContext = createContext({
   cartTotal: 0,
 })
 
+export const CART_ACTION_TYPES = {
+  TOGGLE_CART_HIDDEN: "TOGGLE_CART_HIDDEN"
+}
+
+const INITIAL_STATE = {
+  hidden: true
+}
+
+export const cartReducer = (state, action) => {
+  const {type, payload} = action
+
+  switch(type) {
+    case(CART_ACTION_TYPES.TOGGLE_CART_HIDDEN):
+      return {
+        ...state,
+        hidden: !state.hidden
+      }
+    default:
+      return state
+  }
+}
+
 export const CartProvider = ({children}) => {
-  const [hidden, setHidden] = useState(true)
+  // const [hidden, setHidden] = useState(true)
+  const [{hidden}, dispatch] = useReducer(cartReducer, INITIAL_STATE)
   const [cartItems, setCartItems] = useState([])
   const [cartCount, setCartCount] = useState(0)
   const [cartTotal, setCartTotal] = useState(0)
+
+  const toggleHidden = () => {
+    dispatch({
+      type: CART_ACTION_TYPES.TOGGLE_CART_HIDDEN
+    })
+  }
 
   useEffect(() => {
     const newCartCount = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
@@ -80,7 +109,7 @@ export const CartProvider = ({children}) => {
 
   const value = {
     hidden, 
-    setHidden, 
+    toggleHidden, 
     cartItems, 
     addItemToCart,
     removeItemFromCart, 

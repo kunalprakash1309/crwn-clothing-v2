@@ -38,11 +38,6 @@ export const clearCartItem = (cartItems, productToClear) => {
   return cartItems.filter((cartItem) => cartItem.id !== productToClear.id)
 }
 
-export const newCartCount = (cartItems, cartCount) => {
-  console.log(cartItems, cartCount)
-  return cartItems.reduce((total, cartItem) => total + cartItem.quantity, cartCount)
-}
-
 export const CartContext = createContext({
   hidden: true,
   toggleHidden: () => {},

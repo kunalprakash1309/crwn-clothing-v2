@@ -5,7 +5,7 @@ import './cart-icon.styles.jsx'
 import { CartIconContainer, ItemCount, ShoppingIcon } from './cart-icon.styles.jsx'
 
 const CartIcon = () => {
-  const {hidden, toggleHidden, cartCount} = useContext(CartContext)
+  const {toggleHidden, cartCount} = useContext(CartContext)
   // const toggleisCartOpen = () => setHidden(!hidden)
   return (
     <CartIconContainer onClick={toggleHidden}>

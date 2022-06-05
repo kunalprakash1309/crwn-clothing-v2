@@ -20,7 +20,12 @@ const loggerMiddleware = (store) => (next) => (action) => {
   console.log("Updated state: ", store.getState())
 }
 
-const middlewares = [loggerMiddleware]
+const middlewares = []
+
+if(process.env.NODE_ENV === 'development'){
+  middlewares.push(loggerMiddleware)
+}
+
 
 const composedEnhancers = compose(applyMiddleware(...middlewares))
 

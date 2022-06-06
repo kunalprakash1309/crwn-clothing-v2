@@ -14,3 +14,13 @@ export const loggerMiddleware = (store) => (next) => (action) => {
   // this prints after the store updated 
   console.log("Updated state: ", store.getState())
 }
+
+// Thunks are action creater that returns a function that gets the dispatch parameter
+
+// Thunk is a middleware which keep eye on all actions when it found such actions which return function(with dispatch parameter) inspite of object
+
+// const thunkMiddleware = (store) => (next) => (action) =>  {
+//   if(typeof(action) === 'function'){
+//     action(dispatch)
+//   }
+// }

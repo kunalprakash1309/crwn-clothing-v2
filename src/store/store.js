@@ -16,7 +16,8 @@ if(process.env.NODE_ENV !== 'production'){
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['user'] // try to comment this and check for any bug
+  // blacklist: ['user'] // try to comment this and check for any bug
+  whitelist: ['cart']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

@@ -7,6 +7,7 @@ export const CheckoutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+  margin-bottom: 100px;
 `;
 
 export const CheckoutHeader = styled.div`
@@ -28,5 +29,10 @@ export const HeaderBlock = styled.div`
 export const Total = styled.span`
   margin-top: 30px;
   margin-left: auto;
+  margin-bottom: 60px;
   font-size: 36px;
 `;
+
+export const TestDataContainer = styled.div`
+  color: red
+`

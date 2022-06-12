@@ -29,6 +29,22 @@ export const ProductCartContainer = styled.div`
       display: flex;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    height: 300px;
+
+    img {
+      height: 90%;
+    }
+
+    button{
+      display: block;
+      top: 190px;
+      min-width: fit-content;
+      font-size: 12px;
+      padding: 0 10px;
+    }
+  }
 `;
 
 export const Footer = styled.div`
@@ -37,6 +53,11 @@ export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+
+  @media screen and (max-width: 800px) {
+    height: 10%;
+    font-size: 14px;
+  }
 `;
 
 export const Name = styled.span`

@@ -14,9 +14,20 @@ export const FormContainer = styled.form`
   height: 100px;
   margin-top: 20px;
   min-width: 500px;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    min-width: unset;
+  }
 `;
 
 export const PaymentButton = styled(Button)`
   margin-left: auto;
   margin-top: 30px;
+
+  @media screen and (max-width: 800px) {
+    min-width: 125px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 `;

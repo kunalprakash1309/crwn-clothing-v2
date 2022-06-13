@@ -9,7 +9,7 @@
 <img src="./preview/preview3.png" alt="Checkout Page"/>
 
 - Google Auth
-<img src="./preview/preview2.png" alt="Google Auth"/>
+<img src="./preview/preview2.png" alt="Google Auth" />
 
 - Stripe Payment
 <img src="./preview/preview4.png" alt="Stripe Payment"/>

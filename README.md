@@ -3,16 +3,16 @@
 ## Preview
 
 - Homepage
-<img src="./preview/preview1.png" alt="drawing"/>
+<img src="./preview/preview1.png" alt="Homepage"/>
 
 - Checkout Page
-<img src="./preview/preview3.png" alt="drawing"/>
+<img src="./preview/preview3.png" alt="Checkout Page"/>
 
 - Google Auth
-<img src="./preview/preview2.png" alt="drawing"/>
+<img src="./preview/preview2.png" alt="Google Auth"/>
 
 - Stripe Payment
-<img src="./preview/preview4.png" alt="drawing"/>
+<img src="./preview/preview4.png" alt="Stripe Payment"/>
 
 
 

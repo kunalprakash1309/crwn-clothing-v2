@@ -13,6 +13,8 @@
 
 .env
 
+/preview
+
 # misc
 .DS_Store
 .env.local

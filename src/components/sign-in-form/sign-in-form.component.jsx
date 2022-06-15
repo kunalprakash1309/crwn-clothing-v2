@@ -33,7 +33,6 @@ const SignInForm = () => {
     try {
 
       dispatch(emailSignInStart(email, password))
-      
       resetFormFields();
     } catch (error) {
       switch (error.code) {
@@ -76,6 +75,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name='password'
           value={password}
+          minLength={6}
         />
         <ButtonsContainer>
           <Button type='submit'>Sign In</Button>

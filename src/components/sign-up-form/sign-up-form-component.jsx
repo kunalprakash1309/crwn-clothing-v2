@@ -88,6 +88,7 @@ const SignUpForm = () => {
           name='password'
           onChange={handleChange}
           value={password}
+          minLength={6}
         />
 
         <FormInput 
